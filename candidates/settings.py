@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'vote_candidates',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +55,11 @@ ROOT_URLCONF = 'candidates.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / "templates",
+            BASE_DIR / "templates/candidates",
+            BASE_DIR / "templates/vote_candidates"
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
