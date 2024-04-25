@@ -1,0 +1,22 @@
+{
+  "name": "python_candidate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cacachang/python_candidate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cacachang/python_candidate/issues"
+  },
+  "homepage": "https://github.com/cacachang/python_candidate#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  }
+}
