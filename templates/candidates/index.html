@@ -5,6 +5,9 @@
   <ul>
     <li>
       {{ candidate.name }}
+      <a href="{% url 'show' candidate.id %}">
+        {{ candidate.name }}
+      </a>
     </li>
   </ul>
 {% endfor %}
