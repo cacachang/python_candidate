@@ -4,6 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', include("vote_candidates.urls")),
-    path('', views.index),
-    path('admin/', admin.site.urls),
+    path('candidates/index', views.index, name='index'),
 ]

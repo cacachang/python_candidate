@@ -1,6 +1,14 @@
 {% extends "base.html" %}{% block body %}
 <h1 class="text-white">候選人列表</h1>
 
+{% for candidate in candidates %}
+  <ul>
+    <li>
+      {{ candidate.name }}
+    </li>
+  </ul>
+{% endfor %}
+
 <a href="{% url 'vote_candidates:new' %}">新增候選人</a>
 
 {% endblock %}
