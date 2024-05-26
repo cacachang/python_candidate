@@ -8,12 +8,11 @@ def index(request):
     candidates = models.Candidate.objects.all()
     return render(request, "candidates/index.html", {"candidates": candidates})
 
-
 def show(request, id):
     try:
         candidate = models.Candidate.objects.get(id=id)
     except:
-        return HttpResponse("沒有這號人物", status=404)
+        return HttpResponse("沒有", status=404)
 
     return render(request, "candidates/show.html", {"candidate": candidate})
 
@@ -36,7 +35,6 @@ def update(request, id):
         if form.is_valid():
             candidate.name = form.cleaned_data["name"]
             candidate.party = form.cleaned_data["party"]
-            candidate.age = form.cleaned_data["age"]
             candidate.save()
 
             return redirect("show", id=id)
