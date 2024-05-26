@@ -6,4 +6,5 @@ app_name = 'vote_candidates'
 
 urlpatterns = [
     path('vote_candidates/new', views.new, name="new"),
+    path('vote_candidates/create', views.create, name="create"),
 ]

@@ -10,4 +10,3 @@ class Candidate(models.Model):
             MinValueValidator(40)
         ]
   )
-  introdution = models.TextField

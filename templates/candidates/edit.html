@@ -1,7 +1,7 @@
 {% extends "base.html" %}{% block body %}
-<h1>新增候選人</h1>
+<h1>編輯候選人</h1>
 
-<form action="{% url 'vote_candidates:create' %}" method="post">
+<form action="{% url 'update' candidate.id %}" method="post">
   {% csrf_token %}
 
   {{ form }}
