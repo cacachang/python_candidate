@@ -8,6 +8,9 @@
       <a href="{% url 'show' candidate.id %}">
         {{ candidate.name }}
       </a>
+      <a href="{% url 'edit' candidate.id %}">
+        編輯
+      </a>
     </li>
   </ul>
 {% endfor %}

@@ -2,19 +2,20 @@ from django.http import HttpRequest, request, HttpResponseRedirect
 from django.urls import reverse
 from django.shortcuts import render
 from .models import Candidate
+from candidates.forms import CandidateForm
 
 def new(request):
-    return render(request, "new.html")
+    form = CandidateForm()
+    return render(request, "new.html", { "form": form})
 
 def create(request):
     if request.method == "POST":
-        candidate = Candidate(
-            name=request.POST["name"],
-            age=request.POST["age"],
-            party=request.POST["party"]
-        )
+        form = CandidateForm(request.POST)
 
-        candidate.save()
+        if form.is_valid():
+            candidate = Candidate(**form.cleaned_data)
+            candidate.save()
+
         candidates = Candidate.objects.all()
         return render(request, "candidates/index.html", { "candidates": candidates })
     return HttpResponseRedirect(reverse("vote_candidates:new"))
