@@ -17,4 +17,14 @@
 
 <a href="{% url 'vote_candidates:new' %}">新增候選人</a>
 
+<ul>
+  {% for candidate in candidates %}
+    <li>
+      <a href="{% url 'candidate-show' candidate.id %}">
+        {{ candidate.name }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
 {% endblock %}
